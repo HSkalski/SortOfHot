@@ -34,6 +34,7 @@ shot_delay = 8;
 vari = 1;
 turnSpd=15
 alarm[0] = 0;
+speedTime = 0.02;
 </string>
           </argument>
         </arguments>
@@ -87,16 +88,23 @@ dir = point_direction(x,y,mouse_x,mouse_y);
 fire = (mouse_check_button(mb_left) &amp;&amp; alarm[0] &lt;=0);
 
 //Change direction
-if(image_angle &gt; dir){image_angle-=turnSpd*global.timeMultiplier;}
-if(image_angle &lt; dir){image_angle+=turnSpd*global.timeMultiplier;}
+image_angle = dir;
 
-//image_angle = dir;
+//A=dir-image_angle;
+//A=((A+180) mod 360) - 180;
+//if(A &gt; 0){image_angle+=turnSpd*global.timeMultiplier;}
+//else if(A &lt; 0){image_angle-=turnSpd*global.timeMultiplier;}
+//else{image_angle = dir};
+
+//if(image_angle &gt; dir){image_angle-=turnSpd*global.timeMultiplier;}
+//if(image_angle &lt; dir){image_angle+=turnSpd*global.timeMultiplier;}
+
 
 //collision X
-if(!place_meeting(x+hspd*spd, y, obj_Solid)){x+=hspd*spd;}
+if(!place_meeting(x+hspd*spd, y, obj_Solid)){x+=hspd*spd; global.timeMultiplier+= speedTime;}
 
 //Collision Y
-if(!place_meeting(x, y+vspd*spd, obj_Solid)){y+=vspd*spd;}
+if(!place_meeting(x, y+vspd*spd, obj_Solid)){y+=vspd*spd; global.timeMultiplier+= speedTime;}
 
 
 
