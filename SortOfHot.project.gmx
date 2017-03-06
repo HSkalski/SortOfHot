@@ -39,6 +39,7 @@
     <object>objects\obj_Trail</object>
     <object>objects\obj_TimeControll</object>
     <object>objects\obj_Solid</object>
+    <object>objects\obj_Enemy</object>
     <objects name="Enemy">
       <object>objects\obj_Enemy_1</object>
       <object>objects\obj_Enemy_2</object>

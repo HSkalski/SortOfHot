@@ -32,6 +32,7 @@ vspd = 0;
 spd = 4;
 shot_delay = 8;
 vari = 1;
+turnSpd=15
 alarm[0] = 0;
 </string>
           </argument>
@@ -86,8 +87,8 @@ dir = point_direction(x,y,mouse_x,mouse_y);
 fire = (mouse_check_button(mb_left) &amp;&amp; alarm[0] &lt;=0);
 
 //Change direction
-if(image_angle &gt; dir){image_angle-=20*global.timeMultiplier;}
-if(image_angle &lt; dir){image_angle+=20*global.timeMultiplier;}
+if(image_angle &gt; dir){image_angle-=turnSpd*global.timeMultiplier;}
+if(image_angle &lt; dir){image_angle+=turnSpd*global.timeMultiplier;}
 
 //image_angle = dir;
 

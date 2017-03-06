@@ -74,8 +74,9 @@
 if(alarm[0]&lt;=0){
     trail = instance_create(x,y,obj_Trail)
     trail.speed=0;
-    alarm[0]=7
+    alarm[0]=7/global.timeMultiplier
 }
+speed=10*global.timeMultiplier
 //else{alarm[0]=110}
 
 
