@@ -9,6 +9,7 @@
     <sprite>sprites\spr_Char</sprite>
     <sprite>sprites\spr_Bullet</sprite>
     <sprite>sprites\spr_Gun</sprite>
+    <sprite>sprites\spr_Trail</sprite>
     <sprites name="Enemy">
       <sprite>sprites\spr_Enemy_1</sprite>
       <sprite>sprites\spr_Enemy_2</sprite>
@@ -26,7 +27,6 @@
       <sprite>sprites\spr_Barrel_2</sprite>
       <sprite>sprites\spr_Door_C</sprite>
       <sprite>sprites\spr_Door_O</sprite>
-      <sprite>sprites\sprite17</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -36,6 +36,7 @@
   <objects name="objects">
     <object>objects\obj_Char</object>
     <object>objects\obj_Bullet</object>
+    <object>objects\obj_Trail</object>
     <object>objects\obj_TimeControll</object>
     <object>objects\obj_Solid</object>
     <objects name="Enemy">
