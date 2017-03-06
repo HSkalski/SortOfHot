@@ -58,7 +58,6 @@
       <object>objects\obj_Door_O</object>
     </objects>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\Main</room>
   </rooms>
