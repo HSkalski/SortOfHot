@@ -117,6 +117,7 @@ else {global.timeMultiplier-=slowTime;}
 //Reload sound
 if(hasReloaded==false &amp;&amp; alarm[0]&lt;=0){
     audio_play_sound(snd_gunClick, 10, false);
+    audio_sound_pitch(snd_gunClick, global.timeMultiplier);
     hasReloaded = true;
 }
 
@@ -128,6 +129,7 @@ if (fire) {
     hasReloaded = false;
     // Shoot
     audio_play_sound(snd_gunShot, 10, false);
+    audio_sound_pitch(snd_gunShot, .5+global.timeMultiplier);
     abc=instance_create(x,y,obj_Bullet)
     abc.speed=10*global.timeMultiplier
     abc.direction=image_angle;
