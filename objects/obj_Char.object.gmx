@@ -34,7 +34,9 @@ shot_delay = 8;
 vari = 1;
 turnSpd=15
 alarm[0] = 0;
-speedTime = 0.02;
+speedTime = 0.04;
+slowTime = 0.05;
+hasReloaded = false;
 </string>
           </argument>
         </arguments>
@@ -101,20 +103,31 @@ image_angle = dir;
 
 
 //collision X
-if(!place_meeting(x+hspd*spd, y, obj_Solid)){x+=hspd*spd; global.timeMultiplier+= speedTime;}
+if(!place_meeting(x+hspd*spd, y, obj_Solid)){x+=hspd*spd;}
 
 //Collision Y
-if(!place_meeting(x, y+vspd*spd, obj_Solid)){y+=vspd*spd; global.timeMultiplier+= speedTime;}
+if(!place_meeting(x, y+vspd*spd, obj_Solid)){y+=vspd*spd;}
+
+// Time Scaling
+
+if(hspd != 0 || vspd != 0) {global.timeMultiplier+= speedTime;}
+else {global.timeMultiplier-=slowTime;}
 
 
+//Reload sound
+if(hasReloaded==false &amp;&amp; alarm[0]&lt;=0){
+    audio_play_sound(snd_gunClick, 10, false);
+    hasReloaded = true;
+}
 
 //Bullet Firing
 
 if (fire) {
     // Reset the alarm
     alarm[0] = shot_delay/global.timeMultiplier;
-    
+    hasReloaded = false;
     // Shoot
+    audio_play_sound(snd_gunShot, 10, false);
     abc=instance_create(x,y,obj_Bullet)
     abc.speed=10*global.timeMultiplier
     abc.direction=image_angle;

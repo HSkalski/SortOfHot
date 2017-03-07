@@ -28,7 +28,7 @@
             <string>global.timeMultiplier = 0.2;
 //slowDown = false;
 maxTime=.8;
-minTime=0.2;
+minTime=0.15;
 </string>
           </argument>
         </arguments>
@@ -51,16 +51,19 @@ minTime=0.2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/*
 if(global.timeMultiplier &gt; minTime){
-    global.timeMultiplier-=0.01;
+    global.timeMultiplier-=0.02;
 }
 else{
     global.timeMultiplier = minTime;
 }
-
+*/
+if(global.timeMultiplier &lt; minTime){
+    global.timeMultiplier = minTime
+}
 if(global.timeMultiplier &gt; maxTime){
-    global.timeMultiplier= maxTime
+    global.timeMultiplier = maxTime
 }
 
 /*
