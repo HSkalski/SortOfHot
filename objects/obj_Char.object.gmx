@@ -83,14 +83,16 @@ hasReloaded = false;
           <argument>
             <kind>1</kind>
             <string>/// Player Movement
-hspd = (keyboard_check(ord('D')) - keyboard_check(ord('A')))*global.timeMultiplier;
-vspd = (keyboard_check(ord('S')) - keyboard_check(ord('W')))*global.timeMultiplier;
+
+
+hspd = (keyboard_check(ord('D')) - keyboard_check(ord('A')))*spd*global.timeMultiplier;
+vspd = (keyboard_check(ord('S')) - keyboard_check(ord('W')))*spd*global.timeMultiplier;
+
 dir = point_direction(x,y,mouse_x,mouse_y);
 
 fire = (mouse_check_button(mb_left) &amp;&amp; alarm[0] &lt;=0);
 
-//Change direction
-image_angle = dir;
+
 
 //A=dir-image_angle;
 //A=((A+180) mod 360) - 180;
@@ -100,13 +102,24 @@ image_angle = dir;
 
 //if(image_angle &gt; dir){image_angle-=turnSpd*global.timeMultiplier;}
 //if(image_angle &lt; dir){image_angle+=turnSpd*global.timeMultiplier;}
-
-
-//collision X
-if(!place_meeting(x+hspd*spd, y, obj_Solid)){x+=hspd*spd;}
+//Collisions
 
 //Collision Y
-if(!place_meeting(x, y+vspd*spd, obj_Solid)){y+=vspd*spd;}
+
+if(place_meeting(x,y+vspd,obj_Solid)){
+    while(!place_meeting(x,y+sign(vspd),obj_Solid)){ y += sign(vspd); }
+}
+else y+=vspd;
+
+//collision X
+
+if(place_meeting(x+hspd,y,obj_Solid)){
+    while(!place_meeting(x+sign(hspd),y,obj_Solid)){ x += sign(hspd); }   
+}
+else x+=hspd;
+
+//Change direction
+image_angle = dir;
 
 // Time Scaling
 
@@ -116,8 +129,8 @@ else {global.timeMultiplier-=slowTime;}
 
 //Reload sound
 if(hasReloaded==false &amp;&amp; alarm[0]&lt;=0){
-    audio_play_sound(snd_gunClick, 10, false);
-    audio_sound_pitch(snd_gunClick, global.timeMultiplier);
+    //audio_play_sound(snd_gunClick, 10, false);
+    //audio_sound_pitch(snd_gunClick, global.timeMultiplier);
     hasReloaded = true;
 }
 
@@ -128,10 +141,9 @@ if (fire) {
     alarm[0] = shot_delay/global.timeMultiplier;
     hasReloaded = false;
     // Shoot
-    audio_play_sound(snd_gunShot, 10, false);
-    audio_sound_pitch(snd_gunShot, .5+global.timeMultiplier);
+    //audio_play_sound(snd_gunShot, 10, false);
+    //audio_sound_pitch(snd_gunShot, .5+global.timeMultiplier);
     abc=instance_create(x,y,obj_Bullet)
-    abc.speed=10*global.timeMultiplier
     abc.direction=image_angle;
     
     /*

@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0]=0
+            <string>alarm[0]=0;
+bulletSpeed = 6;
+maxBounces = 1;
+bounces = 0;
 </string>
           </argument>
         </arguments>
@@ -76,11 +79,25 @@ if(alarm[0]&lt;=0){
     trail.speed=0;
     alarm[0]=7/global.timeMultiplier
 }
-speed=10*global.timeMultiplier
+speed=bulletSpeed*global.timeMultiplier
 //else{alarm[0]=110}
 
+if(place_meeting(x + hspeed, y, obj_Solid)){
+    
+    if(bounces &lt;= 1){
+        direction = -direction + 180;
+        bounces+=1;
+    }
+    else instance_destroy();
+}
 
-
+if(place_meeting(x, y + vspeed, obj_Solid)){
+    if(bounces &lt;=1){
+        direction = -direction;
+        bounces+=1;
+    }
+    else instance_destroy();
+}
 
 
 
@@ -108,17 +125,27 @@ speed=10*global.timeMultiplier
     <event eventtype="4" ename="obj_Solid">
       <action>
         <libid>1</libid>
-        <id>203</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_kill_object</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Bounce check
+
+    
+
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
