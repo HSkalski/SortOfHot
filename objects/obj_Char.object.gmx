@@ -34,8 +34,8 @@ shot_delay = 8;
 vari = 1;
 turnSpd=15
 alarm[0] = 0;
-speedTime = 0.04;
-slowTime = 0.05;
+speedTime = 0.1;
+slowTime = 0.1;
 hasReloaded = false;
 </string>
           </argument>
@@ -119,7 +119,8 @@ if(place_meeting(x+hspd,y,obj_Solid)){
 else x+=hspd;
 
 //Change direction
-image_angle = dir;
+//draw_sprite_ext(spr_Char, 0, x, y, 1, 1, dir, 1, 1);
+//image_angle = dir;
 
 // Time Scaling
 
@@ -144,7 +145,7 @@ if (fire) {
     //audio_play_sound(snd_gunShot, 10, false);
     //audio_sound_pitch(snd_gunShot, .5+global.timeMultiplier);
     abc=instance_create(x,y,obj_Bullet)
-    abc.direction=image_angle;
+    abc.direction=dir;
     
     /*
     // Find target
@@ -234,8 +235,8 @@ if !place_free(x+hspeed,y+vspeed)
             <kind>1</kind>
             <string>/// Draw player and gun
 
-draw_sprite_ext(spr_Gun, 0, x, y, 1, 1, image_angle, c_white, 1);
-draw_self();
+draw_sprite_ext(spr_Gun, 0, x, y, 1, 1, dir, c_white, 1);
+draw_sprite_ext(spr_Char, 0, x, y, 1, 1, dir, c_white, 1);
 </string>
           </argument>
         </arguments>
