@@ -155,24 +155,7 @@ if (fire) {
     abc=instance_create(x,y,obj_Bullet)
     abc.direction=dir;
     
-    /*
-    // Find target
-    var temp_dir = dir+random_range(-vari, vari);
-    var temp_x = x+lengthdir_x(48, temp_dir);
-    var temp_y = y+lengthdir_y(48, temp_dir);
-    var start_x = temp_x;
-    var start_y = temp_y;
-    var collision = (position_meeting(temp_x, temp_y, obj_Box) || position_meeting(temp_x, temp_y, obj_Enemy));
-    while(!collision &amp;&amp; distance_to_point(temp_x,temp_y) &lt; room_width) {
-        temp_x += lengthdir_x(4, temp_dir);
-        temp_y += lengthdir_y(4, temp_dir);
-        collision = (position_meeting(temp_x, temp_y, obj_Box) || position_meeting(temp_x, temp_y, obj_Enemy));
-    }
     
-    var shot = instance_create(temp_x, temp_y, obj_Shot);
-    shot.start_x = start_x;
-    shot.start_y = start_y;
-    */
 }
 
 

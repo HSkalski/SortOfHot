@@ -29,6 +29,7 @@
 bulletSpeed = 20;
 maxBounces = 1;
 bounces = 0;
+
 </string>
           </argument>
         </arguments>
