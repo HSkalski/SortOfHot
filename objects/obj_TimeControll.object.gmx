@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>global.timeMultiplier = 0.2;
 //slowDown = false;
-maxTime=1;
-minTime=0.1;
+maxTime=.8;
+minTime=0.13;
 </string>
           </argument>
         </arguments>

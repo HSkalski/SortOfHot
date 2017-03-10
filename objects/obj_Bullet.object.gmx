@@ -74,14 +74,19 @@ bounces = 0;
           <argument>
             <kind>1</kind>
             <string>/// Bullet Step
+//----Trail---//
 if(alarm[0]&lt;=0){
     trail = instance_create(x,y,obj_Trail)
     trail.speed=0;
-    alarm[0]=7/global.timeMultiplier
+    alarm[0]=0/global.timeMultiplier
 }
-speed=bulletSpeed*global.timeMultiplier
-//else{alarm[0]=110}
 
+//-----Speed set-----/////
+speed=bulletSpeed*global.timeMultiplier
+//else{alarm[0]=10}
+
+
+//-----Bounce-----//////
 if(place_meeting(x + hspeed, y, obj_Solid)){
     
     if(bounces &lt;= 1){
