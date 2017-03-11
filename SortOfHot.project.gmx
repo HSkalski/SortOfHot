@@ -30,10 +30,13 @@
       <sprite>sprites\spr_Barrel_2</sprite>
       <sprite>sprites\spr_Door_C</sprite>
       <sprite>sprites\spr_Door_O</sprite>
+      <sprite>sprites\spr_Brick_1</sprite>
+      <sprite>sprites\spr_Brick_2</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -60,6 +63,8 @@
       <object>objects\obj_Barrel_2</object>
       <object>objects\obj_Door_C</object>
       <object>objects\obj_Door_O</object>
+      <object>objects\obj_Brick_1</object>
+      <object>objects\obj_Brick_2</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0]=10/global.timeMultiplier
-trailConstant = 2;
+trailConstant = 1;
 </string>
           </argument>
         </arguments>
@@ -54,6 +54,7 @@ if(image_alpha &gt; 0){image_alpha -=0.1*global.timeMultiplier*trailConstant;}
 
 if(image_alpha &lt;= 0){instance_destroy();}
 
+image_blend = make_colour_hsv(255, 255, random(255));
 </string>
           </argument>
         </arguments>
