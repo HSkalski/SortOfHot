@@ -47,6 +47,7 @@
     <object>objects\obj_TimeControll</object>
     <object>objects\obj_Solid</object>
     <object>objects\obj_Enemy</object>
+    <object>objects\obj_Spawner</object>
     <objects name="Enemy">
       <object>objects\obj_Enemy_1</object>
       <object>objects\obj_Enemy_2</object>
@@ -67,7 +68,6 @@
       <object>objects\obj_Brick_1</object>
       <object>objects\obj_Brick_2</object>
     </objects>
-    <object>objects\obj_Spawner</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main</room>
