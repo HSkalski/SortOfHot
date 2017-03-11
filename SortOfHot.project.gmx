@@ -66,6 +66,7 @@
       <object>objects\obj_Brick_1</object>
       <object>objects\obj_Brick_2</object>
     </objects>
+    <object>objects\obj_Spawner</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main</room>
