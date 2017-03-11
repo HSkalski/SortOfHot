@@ -19,7 +19,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -40,6 +40,7 @@ hasReloaded = false;
 prevDir = 0;
 deltaR = 0;
 rTime = 0.004;
+
 </string>
           </argument>
         </arguments>
@@ -153,7 +154,9 @@ if (fire) {
     // Shoot
     audio_play_sound(snd_gunShot, 10, false);
     
-    abc=instance_create(x,y,obj_Bullet)
+    tempX = lengthdir_x(18,dir);
+    tempY = lengthdir_y(18,dir);
+    abc=instance_create(tempX+x,tempY+y,obj_Bullet)
     abc.direction=dir;
     
     
@@ -233,6 +236,7 @@ draw_sprite_ext(spr_Char, 0, x, y, 1, 1, dir, c_white, 1);
 draw_set_color(c_green)
 draw_text(x+5,y+5, alarm[0]);
 draw_text(x+5,y+20, global.timeMultiplier);
+
 </string>
           </argument>
         </arguments>

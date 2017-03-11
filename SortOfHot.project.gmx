@@ -42,6 +42,7 @@
   <objects name="objects">
     <object>objects\obj_Char</object>
     <object>objects\obj_Bullet</object>
+    <object>objects\obj_enemyBullet</object>
     <object>objects\obj_Trail</object>
     <object>objects\obj_TimeControll</object>
     <object>objects\obj_Solid</object>
