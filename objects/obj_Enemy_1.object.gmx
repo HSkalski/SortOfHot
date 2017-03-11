@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Draw
-if(!cantSee){draw_sprite_ext(    spr_Gun, 0, x, y, 1, 1, dir, c_white, 1);}
+if(!cantSee){draw_sprite_ext(    spr_Gun2, 0, x, y, 1, 1, dir, c_white, 1);}
 draw_sprite_ext(spr_Enemy_1, 0, x, y, 1, 1, dir-90, c_white, 1);
 </string>
           </argument>

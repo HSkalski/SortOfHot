@@ -13,6 +13,7 @@
     <sprite>sprites\spr_Bullet</sprite>
     <sprite>sprites\spr_Bullet_2</sprite>
     <sprite>sprites\spr_Gun</sprite>
+    <sprite>sprites\spr_Gun2</sprite>
     <sprite>sprites\spr_Trail</sprite>
     <sprites name="Enemy">
       <sprite>sprites\spr_Enemy_1</sprite>
