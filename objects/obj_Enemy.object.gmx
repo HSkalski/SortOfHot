@@ -29,7 +29,7 @@
 
 dir=0;
 alarm[0]=0
-shotDelay=0;
+shotDelay=150;
 cantSee=false;
 </string>
           </argument>
@@ -58,6 +58,10 @@ tempX = lengthdir_x(18,dir);
 tempY = lengthdir_y(18,dir);
 cantSee = collision_line(tempX+x,tempY+y,obj_Char.x,obj_Char.y,obj_Solid,false,false) 
 fire = alarm[0] &lt;=0;
+
+if(alarm[0] &lt; 0) { alarm[0] = 0; }
+alarm[0] = alarm[0]  -  ( 5 * global.timeMultiplier ) ;
+
 
 if(cantSee){
     mp_potential_step( obj_Char.x, obj_Char.y, 2*global.timeMultiplier, true);
