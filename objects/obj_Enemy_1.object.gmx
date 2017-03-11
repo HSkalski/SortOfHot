@@ -8,6 +8,49 @@
   <parentName>obj_Enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>dir = point_direction(x,y,obj_Char.x,obj_Char.y)
+tempX = lengthdir_x(18,dir);
+tempY = lengthdir_y(18,dir);
+cantSee = collision_line(tempX+x,tempY+y,obj_Char.x,obj_Char.y,obj_Solid,false,false) 
+fire = alarm[0] &lt;=0;
+
+if(alarm[0] &lt; 0) { alarm[0] = 0; }
+alarm[0] = alarm[0]  -  ( 5 * global.timeMultiplier ) ;
+
+
+if(cantSee){
+    mp_potential_step( obj_Char.x, obj_Char.y, 2*global.timeMultiplier, true);
+}
+else if(fire){
+    alarm[0]=shotDelay;
+    audio_play_sound(snd_gunShot, 10, false);
+    
+    bul = instance_create(tempX+x,tempY+y,obj_enemyBullet)
+    bul.direction = dir;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>

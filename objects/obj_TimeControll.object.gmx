@@ -29,6 +29,7 @@
 //slowDown = false;
 maxTime=.8;
 minTime=0.13;
+global.playerScore=0;
 </string>
           </argument>
         </arguments>
