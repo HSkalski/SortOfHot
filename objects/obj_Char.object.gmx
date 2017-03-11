@@ -34,8 +34,8 @@ shot_delay = 200;
 vari = 1;
 turnSpd=15
 alarm[0] = 0;
-speedTime = 0.1;
-slowTime = 0.1;
+speedTime = 0.01;
+slowTime = 0.01;
 hasReloaded = false;
 prevDir = 0;
 deltaR = 0;
@@ -232,7 +232,7 @@ draw_sprite_ext(spr_Char, 0, x, y, 1, 1, dir, c_white, 1);
 
 draw_set_color(c_green)
 draw_text(x+5,y+5, alarm[0]);
-
+draw_text(x+5,y+20, global.timeMultiplier);
 </string>
           </argument>
         </arguments>

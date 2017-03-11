@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0]=0;
-bulletSpeed = 20;
+bulletSpeed = 10;
 maxBounces = 1;
 bounces = 0;
 
@@ -83,7 +83,7 @@ if(alarm[0]&lt;=0){
 }
 
 //-----Speed set-----/////
-speed=bulletSpeed*global.timeMultiplier
+speed=bulletSpeed*(global.timeMultiplier)
 //else{alarm[0]=10}
 
 
