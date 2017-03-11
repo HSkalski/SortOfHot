@@ -95,6 +95,9 @@ dir = point_direction(x,y,mouse_x,mouse_y);
 
 fire = (mouse_check_button(mb_left) &amp;&amp; alarm[0] &lt;=0);
 
+//Alarm Compensation
+alarm[0] = alarm[0] + ( 1 - global.timeMultiplier );
+
 //Rotation Time Scaling
 //deltaR = abs(dir - prevDir);
 //prevDir=dir;
@@ -126,10 +129,6 @@ if(place_meeting(x+hspd,y,obj_Solid)){
 }
 else x+=hspd;
 
-//Change direction
-//draw_sprite_ext(spr_Char, 0, x, y, 1, 1, dir, 1, 1);
-//image_angle = dir;
-
 // Time Scaling
 
 if(hspd != 0 || vspd != 0) {global.timeMultiplier+= speedTime;}
@@ -147,7 +146,7 @@ if(hasReloaded==false &amp;&amp; alarm[0]&lt;=0){
 
 if (fire) {
     // Reset the alarm
-    alarm[0] = shot_delay/global.timeMultiplier;
+    alarm[0] = shot_delay///global.timeMultiplier;
     hasReloaded = false;
     // Shoot
     //audio_play_sound(snd_gunShot, 10, false);
@@ -228,6 +227,10 @@ if !place_free(x+hspeed,y+vspeed)
 
 draw_sprite_ext(spr_Gun, 0, x, y, 1, 1, dir, c_white, 1);
 draw_sprite_ext(spr_Char, 0, x, y, 1, 1, dir, c_white, 1);
+
+draw_set_color(c_green)
+draw_text(x+5,y+5, alarm[0]);
+
 </string>
           </argument>
         </arguments>
